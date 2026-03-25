@@ -1,2 +1,2 @@
 # llm-deployment
-Deploying LLMs
+Learning to make self-hosted LLMs go brrrrrr.
