@@ -1,0 +1,155 @@
+=== PHASE 1 BASELINE (single request, bf16, no optimization) - bench_single.py ===
+
+--- Measurements ---
+TFTT: 47580.35 ms
+TPOT: 9.14 ms/token
+Total time: 48.431 s
+Tokens generated: 94
+Throughput: 1.9 tok/s
+
+TTFT:        364 ms
+TPOT:        9.49 ms/token  
+Throughput:  70 tok/s
+Tokens:      74
+Total time:  1.057 s
+Prompt:      24 tokens
+
+--- Measurements ---
+TFTT: 34.46 ms
+TPOT: 9.55 ms/token
+Total time: 0.856 s
+Tokens generated: 87
+Throughput: 101.7 tok/s
+
+--- Measurements ---
+TFTT: 31.04 ms
+TPOT: 9.6 ms/token
+Total time: 0.838 s
+Tokens generated: 85
+Throughput: 101.5 tok/s
+
+--- Measurements ---
+TFTT: 39.31 ms
+TPOT: 9.72 ms/token
+Total time: 0.739 s
+Tokens generated: 73
+Throughput: 98.8 tok/s
+
+--- Measurements ---
+TFTT: 32.22 ms
+TPOT: 9.53 ms/token
+Total time: 0.918 s
+Tokens generated: 94
+Throughput: 102.4 tok/s
+
+
+=== PHASE 1 BASELINE (concurrent requests, bf16, no optimization, raw threading) - bench_concurrent.py ===
+--- Sending 1 concurrent requests ---
+Completed:        1/1 requests
+Errors:           0
+Wall time:        0.82 s
+Total tokens:     76
+Aggregate tok/s:  93.1
+TTFT   avg/p50/p99: 59.0 / 59.0 / 59.0 ms
+TPOT   avg:         10.09 ms/token
+
+--- Sending 2 concurrent requests ---
+Completed:        2/2 requests
+Errors:           0
+Wall time:        1.03 s
+Total tokens:     146
+Aggregate tok/s:  142.2
+TTFT   avg/p50/p99: 109.4 / 109.4 / 107.4 ms
+TPOT   avg:         9.79 ms/token
+
+--- Sending 4 concurrent requests ---
+Completed:        4/4 requests
+Errors:           0
+Wall time:        18.76 s
+Total tokens:     352
+Aggregate tok/s:  18.8
+TTFT   avg/p50/p99: 17668.4 / 17667.4 / 17667.6 ms
+TPOT   avg:         10.64 ms/token
+
+--- Sending 8 concurrent requests ---
+Completed:        8/8 requests
+Errors:           0
+Wall time:        1.19 s
+Total tokens:     677
+Aggregate tok/s:  568.9
+TTFT   avg/p50/p99: 129.8 / 131.5 / 135.1 ms
+TPOT   avg:         11.33 ms/token
+
+--- Sending 16 concurrent requests ---
+Completed:        16/16 requests
+Errors:           0
+Wall time:        1.82 s
+Total tokens:     1365
+Aggregate tok/s:  749.2
+TTFT   avg/p50/p99: 140.4 / 142.1 / 154.8 ms
+TPOT   avg:         13.09 ms/token
+
+--- Sending 32 concurrent requests ---
+Completed:        32/32 requests
+Errors:           0
+Wall time:        2.87 s
+Total tokens:     3054
+Aggregate tok/s:  1062.4
+TTFT   avg/p50/p99: 191.4 / 196.3 / 239.5 ms
+TPOT   avg:         17.74 ms/token
+
+
+=== PHASE 1 BASELINE (concurrent requests, bf16, no optimization, ThreadPoolExecutor) - bench_concurrent2.py ===
+--- Sending 1 concurrent requests ---
+Completed:        1/1 requests
+Errors:           0
+Wall time:        0.81 s
+Total tokens:     82
+Aggregate tok/s:  101.6
+TTFT   avg/p50/p99: 42.3 / 42.3 / 42.3 ms
+TPOT   avg:         9.43 ms/token
+
+--- Sending 2 concurrent requests ---
+Completed:        2/2 requests
+Errors:           0
+Wall time:        1.14 s
+Total tokens:     207
+Aggregate tok/s:  181.1
+TTFT   avg/p50/p99: 77.9 / 77.9 / 77.3 ms
+TPOT   avg:         9.75 ms/token
+
+--- Sending 4 concurrent requests ---
+Completed:        4/4 requests
+Errors:           0
+Wall time:        1.18 s
+Total tokens:     333
+Aggregate tok/s:  282.4
+TTFT   avg/p50/p99: 134.0 / 133.1 / 133.2 ms
+TPOT   avg:         10.25 ms/token
+
+--- Sending 8 concurrent requests ---
+Completed:        8/8 requests
+Errors:           0
+Wall time:        1.16 s
+Total tokens:     658
+Aggregate tok/s:  569.7
+TTFT   avg/p50/p99: 94.5 / 94.4 / 95.9 ms
+TPOT   avg:         11.1 ms/token
+
+--- Sending 16 concurrent requests ---
+Completed:        16/16 requests
+Errors:           0
+Wall time:        1.69 s
+Total tokens:     1470
+Aggregate tok/s:  869.4
+TTFT   avg/p50/p99: 153.8 / 153.0 / 169.8 ms
+TPOT   avg:         12.98 ms/token
+
+--- Sending 32 concurrent requests ---
+Completed:        32/32 requests
+Errors:           0
+Wall time:        2.25 s
+Total tokens:     2736
+Aggregate tok/s:  1215.3
+TTFT   avg/p50/p99: 185.6 / 181.6 / 215.7 ms
+TPOT   avg:         18.33 ms/token
