@@ -99,6 +99,6 @@ def run_concurrent(n_concurrent: int):
     print(f"TPOT   avg:         {round(statistics.mean(tpots),2)} ms/token")
 
 if __name__=="__main__":
-    for n in [1, 2, 4, 8, 16, 32]:
+    for n in [1, 2, 4, 8, 16, 32, 64, 128, 256]:
         run_concurrent(n)
         time.sleep(5) # Let vLLM drain between runs
